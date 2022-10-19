@@ -1,0 +1,50 @@
+.medios-de-pago {
+    text-align: center !important;
+}
+
+.index-product-container {
+    display: grid;
+    grid-template-columns: repeat(2,minmax(160px,200px));
+    grid-auto-rows: minmax(200px, 230px);
+    column-gap: calc( 3vw * 1.05 );
+    row-gap: 25px;
+    justify-content: center;
+    margin: 0px 5%;
+    /* min-height: 60vh; */
+}
+
+/* FIN SETTING FORM */
+
+@media (max-width: 350px){
+    .index-product-container{
+        grid-template-columns: minmax(200px,250px);
+        grid-auto-rows: 280px;
+        row-gap: 30px;
+    }
+}
+
+@media (min-width: 400px){
+    .setting-container{
+        margin: 36px auto;
+        margin-bottom: 16px;
+        max-width: 410px;
+    }
+}
+
+@media (min-width: 600px){
+    .index-product-container{
+        grid-template-columns: repeat(3,minmax(170px,210px));
+        /* gap: 20px; */
+    }
+
+    [name="filters"]{
+        grid-template-areas: "marcas productos";
+    }
+
+    .filter-button-container{
+        justify-content: space-between;
+        margin-top: 50px;
+    }
+}
+
+

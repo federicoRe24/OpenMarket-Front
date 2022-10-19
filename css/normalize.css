@@ -1,0 +1,167 @@
+@font-face {
+    font-family: sansProRegular;
+    src: url(./fonts/sourcesanspro/SourceSansPro-Regular.ttf);
+}
+@font-face {
+    font-family: sansProBold;
+    src: url(./fonts/sourcesanspro/SourceSansPro-Bold.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sansProRegular;
+}
+  
+
+
+  /* Works on Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 0px;
+  }
+  
+
+:root {
+    --major-color: #0E1525;
+    --main-bg-color: #EDEDED;
+    --input-bg-color: #FAFAFA;
+    --text-color: #FAFAFA;
+    --white-bg-color: #FFFFFF;
+    --black-color: #000000;
+    --footer-text: 1.6rem;
+    --footer-title: 1.8rem;
+    --font-inter: 'Inter', sans-serif;
+    --button-color: #1C3368;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+li,
+a {
+    color: var(--input-bg-color);
+    text-decoration: none;
+    list-style: none;
+}
+
+main{
+    padding-top: 70px;
+    height: auto;
+    background-color: var(--main-bg-color);
+}
+
+button{
+    background-color: var(--button-color);
+    border-radius: 5px;
+}
+
+button:active{
+    background-color: #395497;
+}
+
+button,input{
+    border: none;
+    outline: none;
+}
+
+input{
+    background-color: var(--input-bg-color);
+}
+
+*{
+    user-select: none;
+}
+
+.loading{
+    margin: 100px auto;
+    margin-top: 180px;
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: conic-gradient(var(--major-color) 90deg, var(--main-bg-color) 0deg);
+    animation: reloadAnimation 3s;
+    animation-iteration-count: infinite;
+}
+
+.loading-fill{
+    background-color: var(--main-bg-color);
+    width: 85%;
+    height: 85%;
+    border-radius: 100px;
+}
+
+
+
+@keyframes reloadAnimation {
+    0%{
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(360deg);
+    }
+    100%{
+        transform: rotate(720deg);
+    }
+}
+
+
+.btnRect{
+    background-color: transparent;
+    position: relative;
+    min-width: 220px;
+    max-width: 240px;
+    height: 45px;
+    border-radius: 0;
+}
+
+.btnRect:hover{
+    background-color: transparent;
+}
+
+.btn__text{
+    height: 100%;
+    color: #FFFFFF;
+    font-family: sansProBold;
+    font-size: 26px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btnRect svg, .btnRect .rect1, .btnRect .rect2{
+    height: 45px;
+    width: 100%;
+}
+
+.btnRect .rect1, .btnRect .rect2{
+    stroke-width: 8px;
+}
+
+.btnRect svg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    fill: transparent;
+}
+
+.btnRect .rect1{
+    stroke: #FFF;
+}
+
+
+.btnRect .rect2{
+    stroke: #00C2FF;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    transition: 2s ease all;
+}
+
+.btnRect:focus .rect2{
+    stroke-dashoffset: 0;
+}
+
